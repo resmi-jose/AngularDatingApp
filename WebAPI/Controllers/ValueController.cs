@@ -24,6 +24,7 @@ namespace WebAPI.Controllers
         }
 
         // GET: api/Value
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Value>>> Getvalues()
         {
