@@ -4,7 +4,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
 import {AuthService} from './services/auth.service';
-
+import {ErrorInterceptorProvider} from './services/error.interceptors';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -23,7 +23,8 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,
+    ErrorInterceptorProvider],
   bootstrap: [AppComponent] 
 })
 export class AppModule { }
