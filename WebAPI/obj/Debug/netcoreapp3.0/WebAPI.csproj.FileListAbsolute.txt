@@ -7,7 +7,6 @@ P:\Angular\DatingAPP\WebAPI\bin\Debug\netcoreapp3.0\WebAPI.runtimeconfig.json
 P:\Angular\DatingAPP\WebAPI\bin\Debug\netcoreapp3.0\WebAPI.runtimeconfig.dev.json
 P:\Angular\DatingAPP\WebAPI\bin\Debug\netcoreapp3.0\WebAPI.dll
 P:\Angular\DatingAPP\WebAPI\bin\Debug\netcoreapp3.0\WebAPI.pdb
-P:\Angular\DatingAPP\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.csprojAssemblyReference.cache
 P:\Angular\DatingAPP\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.AssemblyInfoInputs.cache
 P:\Angular\DatingAPP\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.AssemblyInfo.cs
 P:\Angular\DatingAPP\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.RazorTargetAssemblyInfo.cache
@@ -142,3 +141,4 @@ P:\Angular\DatingAPP\WebAPI\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Prot
 P:\Angular\DatingAPP\WebAPI\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 P:\Angular\DatingAPP\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.csproj.CoreCompileInputs.cache
 P:\Angular\DatingAPP\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+P:\Angular\DatingAPP\WebAPI\obj\Debug\netcoreapp3.0\WebAPI.csprojAssemblyReference.cache

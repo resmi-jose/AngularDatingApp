@@ -1,6 +1,14 @@
 <app-nav></app-nav>
 
 <div> 
+  <h1>{{title}}</h1>
+  <ul>
+    <li *ngFor='let user of checkusers'>
+      {{user.id}}-{{user.username}}
+    </li>
+  </ul>
+ 
+
   <app-home></app-home>
  
 </div>

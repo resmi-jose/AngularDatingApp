@@ -17,7 +17,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using WebAPI.Data;
+using WebAPI.Extensions;
 using WebAPI.Helpers;
+using WebAPI.Interfaces;
+using WebAPI.Services;
 
 namespace WebAPI
 {
@@ -33,23 +36,13 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddApplicationServices(Configuration);
             services.AddControllers();
-            services.AddDbContext<DataContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddCors();
             services.AddScoped<IAuthRepository, AuthRepository>();
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(
-                options =>
-                {
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII
-                        .GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
-                        ValidateIssuer=false,
-                        ValidateAudience=false
-                    };
-                });
+            services.AddIdentityServices(Configuration);
+
+
 
 
         }
@@ -75,12 +68,13 @@ namespace WebAPI
                 })
                 );
             }
-            app.UseCors(options =>
-            options.WithOrigins("http://localhost:4200")
-            .AllowAnyHeader()
-             .AllowAnyMethod());
+          
             app.UseAuthentication();
             app.UseRouting();
+            app.UseCors(options =>
+          options.WithOrigins("https://localhost:4200/")
+          .AllowAnyHeader()
+           .AllowAnyMethod());
 
             app.UseAuthorization();
 
