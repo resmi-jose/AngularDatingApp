@@ -39,12 +39,8 @@ namespace WebAPI
             services.AddApplicationServices(Configuration);
             services.AddControllers();
             services.AddCors();
-            services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddIdentityServices(Configuration);
-
-
-
-
+            services.AddScoped<IAuthRepository, AuthRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,12 +65,13 @@ namespace WebAPI
                 );
             }
           
-            app.UseAuthentication();
+           
             app.UseRouting();
             app.UseCors(options =>
-          options.WithOrigins("https://localhost:4200/")
+          options.WithOrigins("https://localhost:4200")
           .AllowAnyHeader()
            .AllowAnyMethod());
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
